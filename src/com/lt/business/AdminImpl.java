@@ -149,18 +149,22 @@ public class AdminImpl implements AdminInterface {
 	public static void main(String[] args) {
 		
 		AdminImpl prof=new AdminImpl();
-		/*Login Functionality
-		 * Scanner sc=new Scanner(System.in); System.out.println("Enter Username : ");
-		 * String username=sc.next(); System.out.println("Enter Password : "); String
-		 * password=sc.next();
-		 * 
-		 * String response=prof.login(username, password);
-		 * //System.out.println(response); if(response.equals("Success")) {
-		 * System.out.println("Login Successfully"); } else {
-		 * System.out.println("Login Failed Try Again"); }
-		 */
+		
+		//  Login Functionality 
+		Scanner sc=new Scanner(System.in);
+		  System.out.println("Enter Username : "); String username=sc.next();
+		  System.out.println("Enter Password : "); String password=sc.next();
+		  
+		  String response=prof.login(username, password);
+		 System.out.println(response); if(response.equals("Success")) {
+		  System.out.println("Login Successfully"); } else {
+		  System.out.println("Login Failed Try Again"); }
+		 
+		 //Call Add Professor Method 
 		prof.addProfessor();
+		//call generateReport of Grade Card
 		prof.generateReport();
+		//This is Student Approval Method
 		System.out.println(prof.approveStudent());
 	}
 
