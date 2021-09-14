@@ -14,6 +14,7 @@ public class ProfessorImpl implements ProfessorInterface {
 	@Override
 	public void viewCourse() {
 		// TODO Auto-generated method stub
+		//Here We create courses 
 		Course c1 = new Course();	
 		c1.setCid(1);
 		c1.setName("BCS");
@@ -26,7 +27,7 @@ public class ProfessorImpl implements ProfessorInterface {
 		Course c4 = new Course();	
 		c4.setCid(4);
 		c4.setName("BCS");
-		
+		//Now We add that courses into a list
 		List<Course> list = new ArrayList<Course>();
 		list.add(c1);
 		list.add(c2);
@@ -37,12 +38,14 @@ public class ProfessorImpl implements ProfessorInterface {
 		
 		Map<Integer,String> map = new HashMap<Integer,String>();
 		
+		//Iterate list and put it into map
 		while(itr.hasNext())
 		{
-			Course course = (Course) itr.next();
+		Course course = (Course) itr.next();
 		map.put(course.getCid(), course.getName());	
 		}
 		System.out.println("Course ID:\tCourse Name");
+		//Show Map with CourseID and CourseName
 		for(Map.Entry ma:map.entrySet())
 		{
 		System.out.println(ma.getKey()+"\t\t "+ma.getValue());

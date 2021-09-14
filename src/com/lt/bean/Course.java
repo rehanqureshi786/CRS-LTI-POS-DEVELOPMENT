@@ -5,6 +5,7 @@ public class Course {
 	private int cid;
 	private String name;
 	
+	
 	public int getCid() {
 		return cid;
 	}

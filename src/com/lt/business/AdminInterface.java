@@ -8,9 +8,10 @@ import com.lt.bean.Student;
 public interface AdminInterface {
 
 	public String login(String username,String password);
-	public void addProfessor(Professor prof);
-	public void approveStudent(Student std);
+	public void addProfessor();
+	public String approveStudent();
 	public void addCourses(Course course);
 	public boolean removeCourse(int id);
-	public void generateReport(GradeCard grade);
+	public void generateReport();
+
 }

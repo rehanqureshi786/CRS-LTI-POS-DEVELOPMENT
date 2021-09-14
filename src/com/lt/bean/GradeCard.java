@@ -6,8 +6,16 @@ public class GradeCard {
 	private String remarks;
 	private int std_id;
 	private String std_name;
-	private String course;
+	private String department;
 	
+	
+	
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 	public String getGrade() {
 		return grade;
 	}
@@ -32,11 +40,6 @@ public class GradeCard {
 	public void setStd_name(String std_name) {
 		this.std_name = std_name;
 	}
-	public String getCourse() {
-		return course;
-	}
-	public void setCourse(String course) {
-		this.course = course;
-	}
+
 
 }
