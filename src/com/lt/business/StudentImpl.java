@@ -10,7 +10,14 @@ public class StudentImpl implements StudentInterface{
 	@Override
 	public String login(String username, String password) {
 		// TODO Auto-generated method stub
-		return null;
+		String response="Fail";
+		
+		if(username.equals("admin") && password.equals("admin"))
+		{
+			response="Success";
+		}
+		
+		return response;
 	}
 
 	@Override
