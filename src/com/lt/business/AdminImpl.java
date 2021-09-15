@@ -97,16 +97,64 @@ public class AdminImpl implements AdminInterface {
 		return status;
 	}
 
+	Course[] course=new Course[4];
+	
 	@Override
-	public void addCourses(Course course) {
+	public void addCourses() {
 		// TODO Auto-generated method stub
+		Course c1 = new Course();	
+		c1.setCid(1);
+		c1.setName("Java");
+		Course c2 = new Course();	
+		c2.setCid(2);
+		c2.setName("Theory Of Computation");
+		Course c3 = new Course();	
+		c3.setCid(3);
+		c3.setName("HTML");
+		Course c4 = new Course();	
+		c4.setCid(4);
+		c4.setName("Javascript");
 		
+		course[0]=c1;
+		course[1]=c2;
+		course[2]=c3;
+		course[3]=c4;
+		
+		
+		
+		//Now We add that courses into a list
+		List<Course> list = new ArrayList<>();
+	
+		for (int i = 0; i < course.length; i++) {
+			list.add(course[i]);
+		}
+		System.out.println(list);
+		
+		System.out.println("Course Added Successfully");
+	
 	}
 
 	@Override
 	public boolean removeCourse(int id) {
 		// TODO Auto-generated method stub
-		return false;
+		boolean isDelete=false;
+		for (int i = 0; i < course.length; i++) {
+			if(course[i].getCid()==id)
+			{
+				course[i]=null;
+				isDelete=true;	
+			}	
+		}
+		System.out.println("After Delete Courses Remaining are ");
+		for (int i = 0; i < course.length; i++) {
+		
+			if(course[i]!=null)
+			{
+			System.out.println(course[i].getCid()+"\t"+course[i].getName());
+			}
+			
+		}
+		return isDelete;
 	}
 
 	@Override
@@ -166,6 +214,16 @@ public class AdminImpl implements AdminInterface {
 		prof.generateReport();
 		//This is Student Approval Method
 		System.out.println(prof.approveStudent());
+		
+		//This is for AddCourses 
+		prof.addCourses();
+		
+		//This is to remove Course by id
+		System.out.println("Enter Course Id: ");
+		int id =sc.nextInt();
+		System.out.println(prof.removeCourse(1));
+		
+		
 	}
 
 	
